@@ -24,6 +24,5 @@
 +(Player *)player;
 -(Player *)initWithColor:(ccColor3B)col;
 -(void)spawnNewTargetWithLayer:(CCLayer *)layer;
--(void)killOldTarget;
 
 @end

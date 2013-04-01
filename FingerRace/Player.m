@@ -25,14 +25,13 @@
 }
 
 -(void)spawnNewTargetWithLayer:(CCLayer *)layer{
-    [self killOldTarget];
-    self.currentTarget = [SquareTarget spriteWithPlayer:self];
-    self.currentTarget.position = CGPointMake(arc4random() % (int)[layer boundingBox].size.width, arc4random() % (int)[layer boundingBox].size.height);
-    [layer addChild:self.currentTarget];
-}
-
--(void)killOldTarget{
-    [self.currentTarget removeFromParentAndCleanup:YES];
+    CGPoint randPos = CGPointMake(arc4random() % (int)[layer boundingBox].size.width, arc4random() % (int)[layer boundingBox].size.height);
+    if(self.currentTarget == nil){
+        self.currentTarget = [SquareTarget spriteWithPlayer:self];
+        self.currentTarget.position = randPos;
+        [layer addChild:self.currentTarget];
+    }
+    [self.currentTarget runAction:[CCMoveTo actionWithDuration:.1 position:randPos]];
 }
 
 @end
