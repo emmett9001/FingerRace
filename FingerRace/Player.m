@@ -11,7 +11,7 @@
 
 @implementation Player
 
-@synthesize color, currentTarget, touch, touchLock;
+@synthesize color, currentTarget, touch, touchLock, checkpointCount;
 
 +(Player *)player{
     return [[Player alloc] initWithColor:ccc3(arc4random() % 255, arc4random() % 255, arc4random() % 255)];
@@ -21,6 +21,7 @@
     if(self=[super init]){
         self.color = col;
         self.touchLock = NO;
+        self.checkpointCount = 0;
     }
     return self;
 }

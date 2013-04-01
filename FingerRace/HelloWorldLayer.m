@@ -12,11 +12,11 @@
 #pragma mark - HelloWorldLayer
 
 #define NUM_PLAYERS 2
+#define GOAL_CHECKPOINTS 10
 
 @implementation HelloWorldLayer
 
-+(CCScene *) scene
-{
++(CCScene *) scene{
 	CCScene *scene = [CCScene node];
 	HelloWorldLayer *layer = [HelloWorldLayer node];
 	[scene addChild: layer];
@@ -27,6 +27,8 @@
 {
 	if( (self=[super init]) ) {
         self.isTouchEnabled = YES;
+        
+        gameIsActive = YES;
         
         players = [[NSMutableArray array] retain];
         for(int i = 0; i < NUM_PLAYERS; i++){
@@ -45,8 +47,14 @@
 
 -(void)tick:(ccTime)dt{
     for(int i = 0; i < NUM_PLAYERS; i++){
+        Player *p1 = [players objectAtIndex:i];
+        
+        if(gameIsActive && p1.checkpointCount >= GOAL_CHECKPOINTS){
+            NSLog(@"Winner!");
+            gameIsActive = NO;
+        }
+        
         for(int j = 0; j < NUM_PLAYERS; j++){
-            Player *p1 = [players objectAtIndex:i];
             Player *p2 = [players objectAtIndex:j];
             if(p1 == p2) continue;
             
@@ -86,8 +94,11 @@
         for(int i = 0; i < NUM_PLAYERS; i++){
             Player *p1 = [players objectAtIndex:i];
             if(touch == p1.touch && CGRectContainsPoint([p1.currentTarget boundingBox], touchLocation1)){
-                [p1 spawnNewTargetWithLayer:self];
-                p1.touchLock = YES;
+                if(!p1.touchLock){
+                    [p1 spawnNewTargetWithLayer:self];
+                    p1.checkpointCount += 1;
+                    p1.touchLock = YES;
+                }
             }
         }
     }
