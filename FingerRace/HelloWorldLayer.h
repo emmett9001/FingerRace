@@ -18,7 +18,7 @@
 // HelloWorldLayer
 @interface HelloWorldLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {
-    Player *player1, *player2;
+    NSMutableArray *players;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

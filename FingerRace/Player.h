@@ -18,6 +18,7 @@
 }
 
 @property (nonatomic) ccColor3B color;
+@property (nonatomic) BOOL touchLock;
 @property (nonatomic, retain) UITouch *touch;
 @property (nonatomic, retain) SquareTarget *currentTarget;
 

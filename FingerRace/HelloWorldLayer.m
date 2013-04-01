@@ -11,6 +11,8 @@
 
 #pragma mark - HelloWorldLayer
 
+#define NUM_PLAYERS 2
+
 @implementation HelloWorldLayer
 
 +(CCScene *) scene
@@ -26,18 +28,40 @@
 	if( (self=[super init]) ) {
         self.isTouchEnabled = YES;
         
-        player1 = [Player player];
-        [player1 spawnNewTargetWithLayer:self];
+        players = [[NSMutableArray array] retain];
+        for(int i = 0; i < NUM_PLAYERS; i++){
+            [players addObject:[Player player]];
+            [[players objectAtIndex:i] spawnNewTargetWithLayer:self];
+        }
         
-        player2 = [Player player];
-        [player2 spawnNewTargetWithLayer:self];
+        [self schedule:@selector(tick:)];
 	}
 	return self;
 }
 
-- (void) dealloc
-{
+- (void) dealloc{
 	[super dealloc];
+}
+
+-(void)tick:(ccTime)dt{
+    for(int i = 0; i < NUM_PLAYERS; i++){
+        for(int j = 0; j < NUM_PLAYERS; j++){
+            Player *p1 = [players objectAtIndex:i];
+            Player *p2 = [players objectAtIndex:j];
+            if(p1 == p2) continue;
+            
+            if(CGRectIntersectsRect(p1.currentTarget.boundingBox, p2.currentTarget.boundingBox)){
+                [self resolveTargetCollision];
+            }
+        }
+    }
+}
+
+-(void)resolveTargetCollision{
+    for(int i = 0; i < NUM_PLAYERS; i++){
+        [[players objectAtIndex:i] spawnNewTargetWithLayer:self];
+    }
+    
 }
 
 - (void)ccTouchesBegan:(NSSet*)touches withEvent:(UIEvent*)event{
@@ -45,10 +69,11 @@
         CGPoint touchLocation1 = [touch locationInView:[touch view]];
         touchLocation1 = [[CCDirector sharedDirector] convertToGL:touchLocation1];
         
-        if(player1.touch == nil && CGRectContainsPoint([player1.currentTarget boundingBox], touchLocation1)){
-            player1.touch = touch;
-        } else if(player2.touch == nil && CGRectContainsPoint([player2.currentTarget boundingBox], touchLocation1)){
-            player2.touch = touch;
+        for(int i = 0; i < NUM_PLAYERS; i++){
+            Player *p1 = [players objectAtIndex:i];
+            if(p1.touch == nil && CGRectContainsPoint([p1.currentTarget boundingBox], touchLocation1)){
+                p1.touch = touch;
+            }
         }
     }
 }
@@ -57,11 +82,13 @@
     for(UITouch *touch in [[event allTouches] allObjects]){
         CGPoint touchLocation1 = [touch locationInView: [touch view]];
         touchLocation1 = [[CCDirector sharedDirector] convertToGL:touchLocation1];
-
-        if(touch == player1.touch && CGRectContainsPoint([player1.currentTarget boundingBox], touchLocation1)){
-            [player1 spawnNewTargetWithLayer:self];
-        } else if(touch == player2.touch && CGRectContainsPoint([player2.currentTarget boundingBox], touchLocation1)){
-            [player2 spawnNewTargetWithLayer:self];
+        
+        for(int i = 0; i < NUM_PLAYERS; i++){
+            Player *p1 = [players objectAtIndex:i];
+            if(touch == p1.touch && CGRectContainsPoint([p1.currentTarget boundingBox], touchLocation1)){
+                [p1 spawnNewTargetWithLayer:self];
+                p1.touchLock = YES;
+            }
         }
     }
 }
@@ -71,10 +98,11 @@
         CGPoint touchLocation1 = [touch locationInView:[touch view]];
         touchLocation1 = [[CCDirector sharedDirector] convertToGL:touchLocation1];
         
-        if(touch == player1.touch){
-            player1.touch = nil;
-        } else if(touch == player2.touch){
-            player2.touch = nil;
+        for(int i = 0; i < NUM_PLAYERS; i++){
+            Player *p1 = [players objectAtIndex:i];
+            if(touch == p1.touch){
+                p1.touch = nil;
+            }
         }
     }
 }
