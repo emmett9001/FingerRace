@@ -136,6 +136,7 @@
 		AA0C47221709304800AE9714 /* square.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0C47211709304800AE9714 /* square.png */; };
 		AA0C47251709313200AE9714 /* SquareTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0C47241709313200AE9714 /* SquareTarget.m */; };
 		AA4B30011709370B00B1886F /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4B30001709370B00B1886F /* Player.m */; };
+		AA9E30B9170A49F30075DDC5 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9E30B8170A49F30075DDC5 /* GameManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -406,6 +407,8 @@
 		AA0C47241709313200AE9714 /* SquareTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareTarget.m; sourceTree = "<group>"; };
 		AA4B2FFF1709370B00B1886F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		AA4B30001709370B00B1886F /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		AA9E30B7170A49F30075DDC5 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
+		AA9E30B8170A49F30075DDC5 /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -468,6 +471,8 @@
 				AA0C471417092FA400AE9714 /* AppDelegate.m */,
 				AA0C471617092FA400AE9714 /* HelloWorldLayer.h */,
 				AA0C471717092FA400AE9714 /* HelloWorldLayer.m */,
+				AA9E30B7170A49F30075DDC5 /* GameManager.h */,
+				AA9E30B8170A49F30075DDC5 /* GameManager.m */,
 				AA0C47231709313200AE9714 /* SquareTarget.h */,
 				AA0C47241709313200AE9714 /* SquareTarget.m */,
 				AA4B2FFF1709370B00B1886F /* Player.h */,
@@ -1025,6 +1030,7 @@
 				AA0C471B17092FA400AE9714 /* IntroLayer.m in Sources */,
 				AA0C47251709313200AE9714 /* SquareTarget.m in Sources */,
 				AA4B30011709370B00B1886F /* Player.m in Sources */,
+				AA9E30B9170A49F30075DDC5 /* GameManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
