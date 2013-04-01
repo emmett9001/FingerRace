@@ -12,6 +12,7 @@
 @implementation Player
 
 @synthesize color, currentTarget, touch, touchLock, checkpointCount;
+@synthesize identifier = _identifier;
 
 +(Player *)player{
     return [[Player alloc] initWithColor:ccc3(arc4random() % 255, arc4random() % 255, arc4random() % 255)];
@@ -22,6 +23,7 @@
         self.color = col;
         self.touchLock = NO;
         self.checkpointCount = 0;
+        _identifier = [[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]] retain];
     }
     return self;
 }

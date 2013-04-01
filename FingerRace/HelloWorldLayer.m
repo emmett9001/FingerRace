@@ -50,7 +50,7 @@
         Player *p1 = [[GameManager sharedManager].players objectAtIndex:i];
         
         if(gameIsActive && p1.checkpointCount >= GOAL_CHECKPOINTS){
-            NSLog(@"Winner!");
+            NSLog(@"Winner id: %0.2f", [p1.identifier doubleValue]);
             gameIsActive = NO;
         }
         
