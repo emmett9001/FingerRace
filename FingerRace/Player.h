@@ -18,6 +18,7 @@
 }
 
 @property (nonatomic) ccColor3B color;
+@property (nonatomic, retain) UITouch *touch;
 @property (nonatomic, retain) SquareTarget *currentTarget;
 
 +(Player *)player;

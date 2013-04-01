@@ -40,6 +40,8 @@
 	// set FPS at 60
 	[director_ setAnimationInterval:1.0/60];
 
+    [glView setMultipleTouchEnabled:YES];
+    
 	// attach the openglView to the director
 	[director_ setView:glView];
 
@@ -83,6 +85,8 @@
 	// set the Navigation Controller as the root view controller
 //	[window_ addSubview:navController_.view];	// Generates flicker.
 	[window_ setRootViewController:navController_];
+    
+    [window_ setMultipleTouchEnabled:YES];
 	
 	// make main window visible
 	[window_ makeKeyAndVisible];

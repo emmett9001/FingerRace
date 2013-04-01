@@ -11,7 +11,7 @@
 
 @implementation Player
 
-@synthesize color, currentTarget;
+@synthesize color, currentTarget, touch;
 
 +(Player *)player{
     return [[Player alloc] initWithColor:ccc3(arc4random() % 255, arc4random() % 255, arc4random() % 255)];

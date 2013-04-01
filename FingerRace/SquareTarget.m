@@ -21,6 +21,7 @@
 + (id)spriteWithPlayer:(Player *)player{
     SquareTarget *sprite = [SquareTarget spriteWithFile:@"square.png"];
     [sprite setColor:player.color];
+    [sprite setScale:4];
     return sprite;
 }
 
