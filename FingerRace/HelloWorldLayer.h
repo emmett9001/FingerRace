@@ -18,7 +18,6 @@
 // HelloWorldLayer
 @interface HelloWorldLayer : CCLayer
 {
-    NSMutableArray *players;
     BOOL gameIsActive;
 }
 

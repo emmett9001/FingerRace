@@ -10,8 +10,9 @@
 
 @interface GameManager : NSObject
 {
-    
 }
+
+@property (nonatomic, retain) NSMutableArray *players;
 
 +(GameManager *)sharedManager;
 

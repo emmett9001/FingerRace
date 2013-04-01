@@ -8,6 +8,7 @@
 
 #import "HelloWorldLayer.h"
 #import "AppDelegate.h"
+#import "GameManager.h"
 
 #pragma mark - HelloWorldLayer
 
@@ -30,10 +31,9 @@
         
         gameIsActive = YES;
         
-        players = [[NSMutableArray array] retain];
         for(int i = 0; i < NUM_PLAYERS; i++){
-            [players addObject:[Player player]];
-            [[players objectAtIndex:i] spawnNewTargetWithLayer:self];
+            [[GameManager sharedManager].players addObject:[Player player]];
+            [[[GameManager sharedManager].players objectAtIndex:i] spawnNewTargetWithLayer:self];
         }
         
         [self schedule:@selector(tick:)];
@@ -47,7 +47,7 @@
 
 -(void)tick:(ccTime)dt{
     for(int i = 0; i < NUM_PLAYERS; i++){
-        Player *p1 = [players objectAtIndex:i];
+        Player *p1 = [[GameManager sharedManager].players objectAtIndex:i];
         
         if(gameIsActive && p1.checkpointCount >= GOAL_CHECKPOINTS){
             NSLog(@"Winner!");
@@ -55,7 +55,7 @@
         }
         
         for(int j = 0; j < NUM_PLAYERS; j++){
-            Player *p2 = [players objectAtIndex:j];
+            Player *p2 = [[GameManager sharedManager].players objectAtIndex:j];
             if(p1 == p2) continue;
             
             if(CGRectIntersectsRect(p1.currentTarget.boundingBox, p2.currentTarget.boundingBox)){
@@ -67,7 +67,7 @@
 
 -(void)resolveTargetCollision{
     for(int i = 0; i < NUM_PLAYERS; i++){
-        [[players objectAtIndex:i] spawnNewTargetWithLayer:self];
+        [[[GameManager sharedManager].players objectAtIndex:i] spawnNewTargetWithLayer:self];
     }
     
 }
@@ -78,7 +78,7 @@
         touchLocation1 = [[CCDirector sharedDirector] convertToGL:touchLocation1];
         
         for(int i = 0; i < NUM_PLAYERS; i++){
-            Player *p1 = [players objectAtIndex:i];
+            Player *p1 = [[GameManager sharedManager].players objectAtIndex:i];
             if(p1.touch == nil && CGRectContainsPoint([p1.currentTarget boundingBox], touchLocation1)){
                 p1.touch = touch;
             }
@@ -92,7 +92,7 @@
         touchLocation1 = [[CCDirector sharedDirector] convertToGL:touchLocation1];
         
         for(int i = 0; i < NUM_PLAYERS; i++){
-            Player *p1 = [players objectAtIndex:i];
+            Player *p1 = [[GameManager sharedManager].players objectAtIndex:i];
             if(touch == p1.touch && CGRectContainsPoint([p1.currentTarget boundingBox], touchLocation1)){
                 if(!p1.touchLock){
                     [p1 spawnNewTargetWithLayer:self];
@@ -110,7 +110,7 @@
         touchLocation1 = [[CCDirector sharedDirector] convertToGL:touchLocation1];
         
         for(int i = 0; i < NUM_PLAYERS; i++){
-            Player *p1 = [players objectAtIndex:i];
+            Player *p1 = [[GameManager sharedManager].players objectAtIndex:i];
             if(touch == p1.touch){
                 p1.touch = nil;
             }

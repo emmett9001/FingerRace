@@ -12,6 +12,8 @@ static GameManager *sharedInstance = nil;
 
 @implementation GameManager
 
+@synthesize players;
+
 +(GameManager *)sharedManager{
     @synchronized(self){
         if(sharedInstance == nil){
@@ -24,6 +26,7 @@ static GameManager *sharedInstance = nil;
 -(id)init{
     @synchronized(self) {
         [super init];
+        players = [[NSMutableArray array] retain];
         return self;
     }
 }
