@@ -3,10 +3,10 @@
 
 #import "Player.h"
 #import "SquareTarget.h"
+#import "GameManager.h"
 
 using namespace cocos2d;
 
-Player *player1, *player2;
 
 CCScene* HelloWorld::scene(){
     CCScene *scene = CCScene::create();
@@ -16,46 +16,110 @@ CCScene* HelloWorld::scene(){
 }
 
 // on "init" you need to initialize your instance
-bool HelloWorld::init()
-{
+bool HelloWorld::init(){
     
     if ( !CCLayer::init() )
     {
         return false;
     }
     
+    CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, false);
     this->setTouchEnabled(true);
-    CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
     
-    player1 = new Player::Player();
-    player1->initWithColor(cocos2d::ccc3(arc4random() % 255, arc4random() % 255, arc4random() % 255));
-    player1->spawnNewTargetWithLayer(this);
+    GameManager::sharedManager()->gameIsActive = true;
     
-    player2 = new Player::Player();
-    player2->initWithColor(cocos2d::ccc3(arc4random() % 255, arc4random() % 255, arc4random() % 255));
-    player2->spawnNewTargetWithLayer(this);
+    for(int i = 0; i < GameManager::sharedManager()->numPlayers; i++){
+        Player *p = new Player::Player();
+        p->init();
+        p->spawnNewTargetWithLayer(this);
+        GameManager::sharedManager()->players->push_back(p);
+    }
+    
+    this->schedule(schedule_selector(HelloWorld::tick), .0001);
     
     return true;
 }
 
-bool HelloWorld::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent) {
-    CCPoint touchLocation = pTouch->getLocationInView();
-    touchLocation = CCDirector::sharedDirector()->convertToGL(touchLocation);
-    
-    if (player1->currentTarget->boundingBox().containsPoint(touchLocation)) {
-        player1->spawnNewTargetWithLayer(this);
+void HelloWorld::tick(float dt){
+    std::list<Player *> *players = GameManager::sharedManager()->players;
+    for(std::list<Player *>::iterator iter = players->begin(); iter != players->end(); ++iter){
+        Player *p1 = *iter;
+        
+        if(GameManager::sharedManager()->gameIsActive && p1->checkpointCount >= GameManager::sharedManager()->goalCheckpoints){
+            GameManager::sharedManager()->gameIsActive = false;
+        }
+        
+        for(std::list<Player *>::iterator iter2 = players->begin(); iter2 != players->end(); ++iter2){
+            Player *p2 = *iter2;
+            if(p1 == p2) continue;
+            
+            if(CCRect::CCRectIntersectsRect(p1->currentTarget->boundingBox(), p2->currentTarget->boundingBox())){
+                //this->resolveTargetCollision();
+            }
+        }
     }
-    
-    return true;
 }
 
-void HelloWorld::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent) {
-    CCPoint touchLocation = pTouch->getLocationInView();
-    touchLocation = CCDirector::sharedDirector()->convertToGL(touchLocation);
-    
-    if (player1->currentTarget->boundingBox().containsPoint(touchLocation)) {
-        player1->spawnNewTargetWithLayer(this);
-    } else if (player2->currentTarget->boundingBox().containsPoint(touchLocation)) {
-        player2->spawnNewTargetWithLayer(this);
+void HelloWorld::resolveTargetCollision(){
+    std::list<Player *> *players = GameManager::sharedManager()->players;
+    for(std::list<Player *>::iterator iter = players->begin(); iter != players->end(); ++iter){
+        Player *p1 = *iter;
+        printf("Resolving collision\n");
+        p1->spawnNewTargetWithLayer(this);
     }
+    
+}
+
+void HelloWorld::ccTouchesBegan(CCSet *touches, CCEvent *event) {
+    for(auto it = touches->begin(); it != touches->end(); it++){
+        CCPoint touchLocation = ((CCTouch *)*it)->getLocationInView();
+        touchLocation = CCDirector::sharedDirector()->convertToGL(touchLocation);
+        
+        std::list<Player *> *players = GameManager::sharedManager()->players;
+        for(std::list<Player *>::iterator iter = players->begin(); iter != players->end(); ++iter){
+            Player *p1 = *iter;
+
+            if(p1->touch == NULL && CCRect::CCRectContainsPoint(p1->currentTarget->boundingBox(), touchLocation)){
+                p1->touch = (CCTouch *)*it;
+            }
+        }
+    }
+}
+
+void HelloWorld::ccTouchesMoved(CCSet *touches, CCEvent *event) {
+    for(auto it = touches->begin(); it != touches->end(); it++){
+        CCPoint touchLocation = ((CCTouch *)*it)->getLocationInView();
+        touchLocation = CCDirector::sharedDirector()->convertToGL(touchLocation);
+        
+        std::list<Player *> *players = GameManager::sharedManager()->players;
+        for(std::list<Player *>::iterator iter = players->begin(); iter != players->end(); ++iter){
+            Player *p1 = *iter;
+            if((CCTouch *)*it == p1->touch && CCRect::CCRectContainsPoint(p1->currentTarget->boundingBox(), touchLocation)){
+                if(!p1->touchLock){
+                    p1->spawnNewTargetWithLayer(this);
+                    p1->checkpointCount += 1;
+                    //p1->touchLock = true;
+                }
+            }
+        }
+    }
+}
+
+void HelloWorld::ccTouchesEnded(CCSet *touches, CCEvent *event){
+    for(auto it = touches->begin(); it != touches->end(); it++){
+        CCPoint touchLocation = ((CCTouch *)*it)->getLocationInView();
+        touchLocation = CCDirector::sharedDirector()->convertToGL(touchLocation);
+        
+        std::list<Player *> *players = GameManager::sharedManager()->players;
+        for(std::list<Player *>::iterator iter = players->begin(); iter != players->end(); ++iter){
+            Player *p1 = *iter;
+            if((CCTouch *)*it == p1->touch){
+                p1->touch = NULL;
+            }
+        }
+    }
+}
+
+bool HelloWorld::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent){
+    return true;
 }

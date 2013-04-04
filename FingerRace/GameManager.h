@@ -19,6 +19,8 @@ public:
     std::list<Player *> *players;
     static GameManager *sharedManager();
     void init();
+    bool gameIsActive;
+    int numPlayers, goalCheckpoints;
 };
 
 

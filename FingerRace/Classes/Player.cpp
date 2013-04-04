@@ -16,11 +16,12 @@ Player::Player() {
     this->currentTarget = NULL;
 }
 
-void Player::initWithColor(ccColor3B col) {
-    this->color = col;
+void Player::init(){
+    this->color = ccc3(arc4random() % 255, arc4random() % 255, arc4random() % 255);
     this->touchLock = false;
     this->checkpointCount = 0;
     this->_identifier = 11011;
+    this->touch = NULL;
 }
 
 void Player::spawnNewTargetWithLayer(CCLayer * layer) {
@@ -33,11 +34,13 @@ void Player::spawnNewTargetWithLayer(CCLayer * layer) {
         this->currentTarget->initWithPlayer(this);
         this->currentTarget->setPosition(randPos);
         layer->addChild(this->currentTarget);
+        return;
     }
     
     this->currentTarget->runAction(
         CCSequence::actions(
             CCMoveTo::actionWithDuration(.05, randPos),
+            // to get this to work, this class needs to conform to the selector_protocol.h?
             //CCCallFunc::actionWithTarget((CCObject *)this, callfunc_selector(Player::unlockTouch)),
             NULL
         )

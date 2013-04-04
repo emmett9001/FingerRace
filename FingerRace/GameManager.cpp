@@ -22,4 +22,7 @@ GameManager *GameManager::sharedManager(){
 
 void GameManager::init(){
     players = new std::list<Player *>();
+    gameIsActive = true;
+    numPlayers = 2;
+    goalCheckpoints = 10;
 }

@@ -12,20 +12,22 @@
 #include <iostream>
 
 #import "cocos2d.h"
+using namespace cocos2d;
 
 class SquareTarget;
 
 class Player {
     
 public:
-    cocos2d::ccColor3B color;
+    ccColor3B color;
     SquareTarget *currentTarget;
     bool touchLock;
     int checkpointCount;
+    CCTouch *touch;
     
     Player();
-    void initWithColor(cocos2d::ccColor3B col);
-    void spawnNewTargetWithLayer(cocos2d::CCLayer * layer);
+    void init();
+    void spawnNewTargetWithLayer(CCLayer * layer);
     void killOldTarget();
     int getID();
     
