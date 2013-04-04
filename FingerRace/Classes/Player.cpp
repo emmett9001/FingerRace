@@ -6,27 +6,48 @@
 //
 //
 
+#import "cocos2d.h"
+using namespace cocos2d;
+
+#import "SquareTarget.h"
 #include "Player.h"
 
-#import "cocos2d.h"
-#import "SquareTarget.h"
-
 Player::Player() {
-    this->currentTarget = new SquareTarget();
+    this->currentTarget = NULL;
 }
 
-void Player::initWithColor(cocos2d::ccColor3B col) {
+void Player::initWithColor(ccColor3B col) {
     this->color = col;
+    this->touchLock = false;
+    this->checkpointCount = 0;
+    this->_identifier = 11011;
 }
 
-void Player::spawnNewTargetWithLayer(cocos2d::CCLayer * layer) {
-    this->killOldTarget();
-    this->currentTarget = new SquareTarget();
-    this->currentTarget->initWithPlayer(this);
-    this->currentTarget->setPosition(*new cocos2d::CCPoint(arc4random() % (int)layer->boundingBox().size.width, arc4random() % (int)layer->boundingBox().size.height));
-    layer->addChild(this->currentTarget);
+void Player::spawnNewTargetWithLayer(CCLayer * layer) {
+    if(this->touchLock) return;
+    
+    CCPoint randPos = *new CCPoint(arc4random() % (int)layer->boundingBox().size.width, arc4random() % (int)layer->boundingBox().size.height);
+    
+    if(this->currentTarget == NULL){
+        this->currentTarget = new SquareTarget();
+        this->currentTarget->initWithPlayer(this);
+        this->currentTarget->setPosition(randPos);
+        layer->addChild(this->currentTarget);
+    }
+    
+    this->currentTarget->runAction(
+        CCSequence::actions(
+            CCMoveTo::actionWithDuration(.05, randPos),
+            //CCCallFunc::actionWithTarget((CCObject *)this, callfunc_selector(Player::unlockTouch)),
+            NULL
+        )
+    );
 }
 
-void Player::killOldTarget() {
-    this->currentTarget->removeFromParentAndCleanup(true);
+void Player::unlockTouch(){
+    this->touchLock = false;
+}
+
+int Player::getID(){
+    return this->_identifier;
 }

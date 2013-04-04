@@ -20,11 +20,19 @@ class Player {
 public:
     cocos2d::ccColor3B color;
     SquareTarget *currentTarget;
+    bool touchLock;
+    int checkpointCount;
     
     Player();
     void initWithColor(cocos2d::ccColor3B col);
     void spawnNewTargetWithLayer(cocos2d::CCLayer * layer);
     void killOldTarget();
+    int getID();
+    
+private:
+    int _identifier;
+    
+    void unlockTouch();
 };
 
 #endif /* defined(__CocosTest__Player__) */
