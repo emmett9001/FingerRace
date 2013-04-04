@@ -5,7 +5,6 @@
 #import "SquareTarget.h"
 
 using namespace cocos2d;
-using namespace CocosDenshion;
 
 Player *player1, *player2;
 
@@ -47,8 +46,8 @@ bool HelloWorld::init()
     return true;
 }
 
-bool HelloWorld::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent) {
-    cocos2d::CCPoint touchLocation = pTouch->getLocationInView();
+bool HelloWorld::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent) {
+    CCPoint touchLocation = pTouch->getLocationInView();
     touchLocation = CCDirector::sharedDirector()->convertToGL(touchLocation);
     
     if (player1->currentTarget->boundingBox().containsPoint(touchLocation)) {
@@ -58,8 +57,8 @@ bool HelloWorld::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent
     return true;
 }
 
-void HelloWorld::ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent) {
-    cocos2d::CCPoint touchLocation = pTouch->getLocationInView();
+void HelloWorld::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent) {
+    CCPoint touchLocation = pTouch->getLocationInView();
     touchLocation = CCDirector::sharedDirector()->convertToGL(touchLocation);
     
     if (player1->currentTarget->boundingBox().containsPoint(touchLocation)) {
