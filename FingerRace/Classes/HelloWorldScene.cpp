@@ -72,7 +72,8 @@ void HelloWorld::resolveTargetCollision(){
 
 void HelloWorld::ccTouchesBegan(CCSet *touches, CCEvent *event) {
     for(auto it = touches->begin(); it != touches->end(); it++){
-        CCPoint touchLocation = ((CCTouch *)*it)->getLocationInView();
+        CCTouch *touch = (CCTouch *)*it;
+        CCPoint touchLocation = touch->getLocationInView();
         touchLocation = CCDirector::sharedDirector()->convertToGL(touchLocation);
         
         std::list<Player *> *players = GameManager::sharedManager()->players;
@@ -88,7 +89,8 @@ void HelloWorld::ccTouchesBegan(CCSet *touches, CCEvent *event) {
 
 void HelloWorld::ccTouchesMoved(CCSet *touches, CCEvent *event) {
     for(auto it = touches->begin(); it != touches->end(); it++){
-        CCPoint touchLocation = ((CCTouch *)*it)->getLocationInView();
+        CCTouch *touch = (CCTouch *)*it;
+        CCPoint touchLocation = touch->getLocationInView();
         touchLocation = CCDirector::sharedDirector()->convertToGL(touchLocation);
         
         std::list<Player *> *players = GameManager::sharedManager()->players;
@@ -107,7 +109,8 @@ void HelloWorld::ccTouchesMoved(CCSet *touches, CCEvent *event) {
 
 void HelloWorld::ccTouchesEnded(CCSet *touches, CCEvent *event){
     for(auto it = touches->begin(); it != touches->end(); it++){
-        CCPoint touchLocation = ((CCTouch *)*it)->getLocationInView();
+        CCTouch *touch = (CCTouch *)*it;
+        CCPoint touchLocation = touch->getLocationInView();
         touchLocation = CCDirector::sharedDirector()->convertToGL(touchLocation);
         
         std::list<Player *> *players = GameManager::sharedManager()->players;
