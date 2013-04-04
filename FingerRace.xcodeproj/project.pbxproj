@@ -204,6 +204,7 @@
 		2019C64D170DF6B100B9767B /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2019C64C170DF6B100B9767B /* HelloWorldScene.cpp */; };
 		2019C655170DF70300B9767B /* SquareTarget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2019C653170DF70300B9767B /* SquareTarget.cpp */; };
 		2019C658170DF73C00B9767B /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2019C656170DF73C00B9767B /* Player.cpp */; };
+		AAC84E45170E112F0057A7E0 /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAC84E43170E112F0057A7E0 /* GameManager.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -640,6 +641,8 @@
 		2019C654170DF70300B9767B /* SquareTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SquareTarget.h; path = Classes/SquareTarget.h; sourceTree = "<group>"; };
 		2019C656170DF73C00B9767B /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = Classes/Player.cpp; sourceTree = "<group>"; };
 		2019C657170DF73C00B9767B /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = Classes/Player.h; sourceTree = "<group>"; };
+		AAC84E43170E112F0057A7E0 /* GameManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameManager.cpp; sourceTree = "<group>"; };
+		AAC84E44170E112F0057A7E0 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1525,6 +1528,8 @@
 				2019C649170DF6B100B9767B /* AppDelegate.cpp */,
 				2019C64B170DF6B100B9767B /* HelloWorldScene.h */,
 				2019C64C170DF6B100B9767B /* HelloWorldScene.cpp */,
+				AAC84E43170E112F0057A7E0 /* GameManager.cpp */,
+				AAC84E44170E112F0057A7E0 /* GameManager.h */,
 				2019C653170DF70300B9767B /* SquareTarget.cpp */,
 				2019C654170DF70300B9767B /* SquareTarget.h */,
 				2019C656170DF73C00B9767B /* Player.cpp */,
@@ -1781,6 +1786,7 @@
 				2019C64D170DF6B100B9767B /* HelloWorldScene.cpp in Sources */,
 				2019C655170DF70300B9767B /* SquareTarget.cpp in Sources */,
 				2019C658170DF73C00B9767B /* Player.cpp in Sources */,
+				AAC84E45170E112F0057A7E0 /* GameManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1912,6 +1918,7 @@
 				2019C652170DF6B100B9767B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

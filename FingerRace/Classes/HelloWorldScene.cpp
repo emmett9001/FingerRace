@@ -8,18 +8,10 @@ using namespace cocos2d;
 
 Player *player1, *player2;
 
-CCScene* HelloWorld::scene()
-{
-    // 'scene' is an autorelease object
+CCScene* HelloWorld::scene(){
     CCScene *scene = CCScene::create();
-    
-    // 'layer' is an autorelease object
     HelloWorld *layer = HelloWorld::create();
-    
-    // add layer as a child to scene
     scene->addChild(layer);
-    
-    // return the scene
     return scene;
 }
 
