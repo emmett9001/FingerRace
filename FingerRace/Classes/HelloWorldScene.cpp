@@ -100,6 +100,7 @@ void HelloWorld::ccTouchesMoved(CCSet *touches, CCEvent *event) {
                 if(!p1->touchLock){
                     p1->spawnNewTargetWithLayer(this);
                     p1->checkpointCount += 1;
+                    // uncomment this when cccallfunc gets figured out
                     //p1->touchLock = true;
                 }
             }
