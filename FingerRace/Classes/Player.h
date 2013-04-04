@@ -12,7 +12,8 @@
 #include <iostream>
 
 #import "cocos2d.h"
-#import "SquareTarget.h"
+
+class SquareTarget;
 
 class Player {
     

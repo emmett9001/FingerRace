@@ -22,7 +22,7 @@ void Player::initWithColor(cocos2d::ccColor3B col) {
 void Player::spawnNewTargetWithLayer(cocos2d::CCLayer * layer) {
     this->killOldTarget();
     this->currentTarget = new SquareTarget();
-    this->currentTarget->initWithColor(this->color);
+    this->currentTarget->initWithPlayer(this);
     this->currentTarget->setPosition(*new cocos2d::CCPoint(arc4random() % (int)layer->boundingBox().size.width, arc4random() % (int)layer->boundingBox().size.height));
     layer->addChild(this->currentTarget);
 }

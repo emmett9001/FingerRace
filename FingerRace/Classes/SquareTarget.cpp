@@ -7,6 +7,7 @@
 //
 
 #include "SquareTarget.h"
+#include "Player.h"
 
 #import "cocos2d.h"
 
@@ -14,9 +15,9 @@ SquareTarget::SquareTarget() {
     
 }
 
-void SquareTarget::initWithColor(cocos2d::ccColor3B col) {
+void SquareTarget::initWithPlayer(Player *p) {
     this->initWithFile("square.png");
-    this->setColor(col);
+    this->setColor(p->color);
 }
 
 void SquareTarget::wasTouched() {

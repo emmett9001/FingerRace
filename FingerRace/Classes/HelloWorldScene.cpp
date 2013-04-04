@@ -2,6 +2,7 @@
 #include "SimpleAudioEngine.h"
 
 #import "Player.h"
+#import "SquareTarget.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;

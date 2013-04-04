@@ -13,12 +13,14 @@
 
 #import "cocos2d.h"
 
+class Player;
+
 class SquareTarget : public cocos2d::CCSprite {
     cocos2d::ccColor3B color;
     
 public:
     SquareTarget();
-    void initWithColor(cocos2d::ccColor3B col);
+    void initWithPlayer(Player *p);
     void wasTouched();
 };
 
