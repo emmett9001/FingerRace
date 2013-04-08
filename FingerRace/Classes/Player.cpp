@@ -32,7 +32,7 @@ bool Player::init() {
 void Player::spawnNewTargetWithLayer(CCLayer * layer) {
     if(this->touchLock) return;
     
-    CCPoint randPos = *new CCPoint(arc4random() % (int)layer->boundingBox().size.width, arc4random() % (int)layer->boundingBox().size.height);
+    CCPoint randPos = *new CCPoint(arc4random() % ((int)layer->boundingBox().size.width - 80) + 40, arc4random() % ((int)layer->boundingBox().size.height - 80) + 40);
     
     if(this->currentTarget == NULL){
         this->currentTarget = new SquareTarget();
