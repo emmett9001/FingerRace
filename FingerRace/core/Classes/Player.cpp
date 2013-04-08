@@ -16,23 +16,18 @@ Player::Player() {
     this->currentTarget = NULL;
 }
 
-bool Player::init() {
+void Player::init(){
     this->color = ccc3(arc4random() % 255, arc4random() % 255, arc4random() % 255);
     this->touchLock = false;
     this->checkpointCount = 0;
     this->_identifier = 11011;
     this->touch = NULL;
-
-    this->initWithFile("circle.png");
-    this->setColor(this->color);
-
-    return true;
 }
 
 void Player::spawnNewTargetWithLayer(CCLayer * layer) {
     if(this->touchLock) return;
     
-    CCPoint randPos = *new CCPoint(arc4random() % ((int)layer->boundingBox().size.width - 80) + 40, arc4random() % ((int)layer->boundingBox().size.height - 80) + 40);
+    CCPoint randPos = *new CCPoint(arc4random() % (int)layer->boundingBox().size.width, arc4random() % (int)layer->boundingBox().size.height);
     
     if(this->currentTarget == NULL){
         this->currentTarget = new SquareTarget();
@@ -58,10 +53,4 @@ void Player::unlockTouch(){
 
 int Player::getID(){
     return this->_identifier;
-}
-
-void Player::updatePosition(CCPoint glPosition) {
-    if (this->touch != NULL) {
-        this->setPosition(glPosition);
-    }
 }

@@ -16,7 +16,7 @@ using namespace cocos2d;
 
 class SquareTarget;
 
-class Player : public cocos2d::CCSprite {
+class Player {
     
 public:
     ccColor3B color;
@@ -26,11 +26,10 @@ public:
     CCTouch *touch;
     
     Player();
-    bool init();
+    void init();
     void spawnNewTargetWithLayer(CCLayer * layer);
     void killOldTarget();
     int getID();
-    void updatePosition(CCPoint glPosition);
     
 private:
     int _identifier;
