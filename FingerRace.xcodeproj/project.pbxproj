@@ -204,6 +204,8 @@
 		2019C64D170DF6B100B9767B /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2019C64C170DF6B100B9767B /* HelloWorldScene.cpp */; };
 		2019C655170DF70300B9767B /* SquareTarget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2019C653170DF70300B9767B /* SquareTarget.cpp */; };
 		2019C658170DF73C00B9767B /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2019C656170DF73C00B9767B /* Player.cpp */; };
+		201AD7C01710AB160072B899 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 201AD7BE1710AB160072B899 /* circle.png */; };
+		201AD7C11710AB160072B899 /* square.png in Resources */ = {isa = PBXBuildFile; fileRef = 201AD7BF1710AB160072B899 /* square.png */; };
 		AAC84E45170E112F0057A7E0 /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAC84E43170E112F0057A7E0 /* GameManager.cpp */; };
 /* End PBXBuildFile section */
 
@@ -641,6 +643,8 @@
 		2019C654170DF70300B9767B /* SquareTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SquareTarget.h; path = Classes/SquareTarget.h; sourceTree = "<group>"; };
 		2019C656170DF73C00B9767B /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = Classes/Player.cpp; sourceTree = "<group>"; };
 		2019C657170DF73C00B9767B /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = Classes/Player.h; sourceTree = "<group>"; };
+		201AD7BE1710AB160072B899 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = circle.png; path = Resources/circle.png; sourceTree = "<group>"; };
+		201AD7BF1710AB160072B899 /* square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = square.png; path = Resources/square.png; sourceTree = "<group>"; };
 		AAC84E43170E112F0057A7E0 /* GameManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameManager.cpp; path = Classes/GameManager.cpp; sourceTree = "<group>"; };
 		AAC84E44170E112F0057A7E0 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameManager.h; path = Classes/GameManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -712,6 +716,8 @@
 		2019C3BC170DF6A400B9767B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				201AD7BE1710AB160072B899 /* circle.png */,
+				201AD7BF1710AB160072B899 /* square.png */,
 				2019C3BD170DF6A400B9767B /* CloseNormal.png */,
 				2019C3BF170DF6A400B9767B /* CloseSelected.png */,
 				2019C3C1170DF6A400B9767B /* Default.png */,
@@ -1600,6 +1606,8 @@
 				2019C3D0170DF6A500B9767B /* Icon@2x.png in Resources */,
 				2019C3D2170DF6A500B9767B /* iTunesArtwork in Resources */,
 				2019C464170DF6A800B9767B /* ChangeLog in Resources */,
+				201AD7C01710AB160072B899 /* circle.png in Resources */,
+				201AD7C11710AB160072B899 /* square.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

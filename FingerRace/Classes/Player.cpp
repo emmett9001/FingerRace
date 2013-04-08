@@ -16,12 +16,17 @@ Player::Player() {
     this->currentTarget = NULL;
 }
 
-void Player::init(){
+bool Player::init() {
     this->color = ccc3(arc4random() % 255, arc4random() % 255, arc4random() % 255);
     this->touchLock = false;
     this->checkpointCount = 0;
     this->_identifier = 11011;
     this->touch = NULL;
+
+    this->initWithFile("circle.png");
+    this->setColor(this->color);
+
+    return true;
 }
 
 void Player::spawnNewTargetWithLayer(CCLayer * layer) {
@@ -53,4 +58,10 @@ void Player::unlockTouch(){
 
 int Player::getID(){
     return this->_identifier;
+}
+
+void Player::updatePosition(CCPoint glPosition) {
+    if (this->touch != NULL) {
+        this->setPosition(glPosition);
+    }
 }
