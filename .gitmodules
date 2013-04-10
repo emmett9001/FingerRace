@@ -1,0 +1,3 @@
+[submodule "FingerRace/core"]
+	path = FingerRace/core
+	url = https://github.com/emmett9001/fingerrace-core.git
