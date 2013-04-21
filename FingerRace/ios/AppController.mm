@@ -26,12 +26,12 @@ static AppDelegate s_sharedApplication;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
-    EAGLView *__glView = [EAGLView viewWithFrame: [window bounds]
-                                     pixelFormat: kEAGLColorFormatRGBA8
-                                     depthFormat: GL_DEPTH_COMPONENT16
-                              preserveBackbuffer: NO
-                                      sharegroup: nil
-                                   multiSampling: NO
+    EAGLView *__glView = [EAGLView viewWithFrame:[window bounds]
+                                     pixelFormat:kEAGLColorFormatRGBA8
+                                     depthFormat:GL_DEPTH_COMPONENT16
+                              preserveBackbuffer:NO
+                                      sharegroup:nil
+                                   multiSampling:NO
                                  numberOfSamples:0 ];
     
     [__glView setMultipleTouchEnabled:YES];
