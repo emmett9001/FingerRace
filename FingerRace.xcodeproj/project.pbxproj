@@ -1869,6 +1869,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Emmett Butler";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Emmett Butler";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1885,6 +1887,8 @@
 					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "214EF795-DF39-4EA2-91D3-9CA90206F46D";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "214EF795-DF39-4EA2-91D3-9CA90206F46D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1893,6 +1897,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Emmett Butler";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Emmett Butler";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FingerRace/Prefix.pch;
@@ -1908,6 +1914,8 @@
 					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "214EF795-DF39-4EA2-91D3-9CA90206F46D";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "214EF795-DF39-4EA2-91D3-9CA90206F46D";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
