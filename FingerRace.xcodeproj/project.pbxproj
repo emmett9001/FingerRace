@@ -203,6 +203,7 @@
 		AA47CFF817135E2600B9301A /* CCTableView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA47CF4617135E2600B9301A /* CCTableView.cpp */; };
 		AA47CFF917135E2600B9301A /* CCTableViewCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA47CF4817135E2600B9301A /* CCTableViewCell.cpp */; };
 		AA47CFFA17135E2600B9301A /* HttpClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA47CF4B17135E2600B9301A /* HttpClient.cpp */; };
+		AA5EF9E117273F8200E4BB1F /* ScoreCounter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA5EF9DF17273F8200E4BB1F /* ScoreCounter.cpp */; };
 		AA79757A1723280300966D2E /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA7975701723280300966D2E /* AppDelegate.cpp */; };
 		AA79757B1723280300966D2E /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA7975721723280300966D2E /* GameManager.cpp */; };
 		AA79757C1723280300966D2E /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA7975741723280300966D2E /* HelloWorldScene.cpp */; };
@@ -638,6 +639,8 @@
 		AA47CF4C17135E2600B9301A /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
 		AA47CF4D17135E2600B9301A /* HttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequest.h; sourceTree = "<group>"; };
 		AA47CF4E17135E2600B9301A /* HttpResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpResponse.h; sourceTree = "<group>"; };
+		AA5EF9DF17273F8200E4BB1F /* ScoreCounter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScoreCounter.cpp; sourceTree = "<group>"; };
+		AA5EF9E017273F8200E4BB1F /* ScoreCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreCounter.h; sourceTree = "<group>"; };
 		AA7975701723280300966D2E /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		AA7975711723280300966D2E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA7975721723280300966D2E /* GameManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameManager.cpp; sourceTree = "<group>"; };
@@ -1536,6 +1539,8 @@
 				AA7975711723280300966D2E /* AppDelegate.h */,
 				AA7975721723280300966D2E /* GameManager.cpp */,
 				AA7975731723280300966D2E /* GameManager.h */,
+				AA5EF9DF17273F8200E4BB1F /* ScoreCounter.cpp */,
+				AA5EF9E017273F8200E4BB1F /* ScoreCounter.h */,
 				AA7975741723280300966D2E /* HelloWorldScene.cpp */,
 				AA7975751723280300966D2E /* HelloWorldScene.h */,
 				AA7975761723280300966D2E /* Player.cpp */,
@@ -1799,6 +1804,7 @@
 				AA79757C1723280300966D2E /* HelloWorldScene.cpp in Sources */,
 				AA79757D1723280300966D2E /* Player.cpp in Sources */,
 				AA79757E1723280300966D2E /* SquareTarget.cpp in Sources */,
+				AA5EF9E117273F8200E4BB1F /* ScoreCounter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
