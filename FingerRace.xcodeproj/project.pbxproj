@@ -209,6 +209,7 @@
 		AA79757C1723280300966D2E /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA7975741723280300966D2E /* HelloWorldScene.cpp */; };
 		AA79757D1723280300966D2E /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA7975761723280300966D2E /* Player.cpp */; };
 		AA79757E1723280300966D2E /* SquareTarget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA7975781723280300966D2E /* SquareTarget.cpp */; };
+		AABE5AE7172F39EC0069FDD4 /* square_round.png in Resources */ = {isa = PBXBuildFile; fileRef = AABE5AE6172F39EC0069FDD4 /* square_round.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -651,6 +652,7 @@
 		AA7975771723280300966D2E /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		AA7975781723280300966D2E /* SquareTarget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SquareTarget.cpp; sourceTree = "<group>"; };
 		AA7975791723280300966D2E /* SquareTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareTarget.h; sourceTree = "<group>"; };
+		AABE5AE6172F39EC0069FDD4 /* square_round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = square_round.png; path = Resources/square_round.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -720,6 +722,7 @@
 		2019C3BC170DF6A400B9767B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AABE5AE6172F39EC0069FDD4 /* square_round.png */,
 				201AD7BE1710AB160072B899 /* circle.png */,
 				201AD7BF1710AB160072B899 /* square.png */,
 				2019C3BD170DF6A400B9767B /* CloseNormal.png */,
@@ -1617,6 +1620,7 @@
 				201AD7C11710AB160072B899 /* square.png in Resources */,
 				AA47CF7117135E2600B9301A /* ChangeLog in Resources */,
 				AA47CF7217135E2600B9301A /* CMakeLists.txt in Resources */,
+				AABE5AE7172F39EC0069FDD4 /* square_round.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
