@@ -211,6 +211,7 @@
 		AA79757E1723280300966D2E /* SquareTarget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA7975781723280300966D2E /* SquareTarget.cpp */; };
 		AABE5AE7172F39EC0069FDD4 /* square_round.png in Resources */ = {isa = PBXBuildFile; fileRef = AABE5AE6172F39EC0069FDD4 /* square_round.png */; };
 		AADCA75E17306AD80049E76D /* Roboto-Condensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AADCA75D17306AD80049E76D /* Roboto-Condensed.ttf */; };
+		AADCA76317307FDA0049E76D /* circle_blur.png in Resources */ = {isa = PBXBuildFile; fileRef = AADCA76217307FDA0049E76D /* circle_blur.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -655,6 +656,7 @@
 		AA7975791723280300966D2E /* SquareTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareTarget.h; sourceTree = "<group>"; };
 		AABE5AE6172F39EC0069FDD4 /* square_round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = square_round.png; path = Resources/square_round.png; sourceTree = "<group>"; };
 		AADCA75D17306AD80049E76D /* Roboto-Condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Condensed.ttf"; path = "Resources/Roboto-Condensed.ttf"; sourceTree = "<group>"; };
+		AADCA76217307FDA0049E76D /* circle_blur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = circle_blur.png; path = Resources/circle_blur.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -724,6 +726,7 @@
 		2019C3BC170DF6A400B9767B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AADCA76217307FDA0049E76D /* circle_blur.png */,
 				AADCA75D17306AD80049E76D /* Roboto-Condensed.ttf */,
 				AABE5AE6172F39EC0069FDD4 /* square_round.png */,
 				201AD7BE1710AB160072B899 /* circle.png */,
@@ -1625,6 +1628,7 @@
 				AA47CF7217135E2600B9301A /* CMakeLists.txt in Resources */,
 				AABE5AE7172F39EC0069FDD4 /* square_round.png in Resources */,
 				AADCA75E17306AD80049E76D /* Roboto-Condensed.ttf in Resources */,
+				AADCA76317307FDA0049E76D /* circle_blur.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
