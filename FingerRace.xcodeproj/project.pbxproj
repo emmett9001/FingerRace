@@ -210,6 +210,7 @@
 		AA79757D1723280300966D2E /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA7975761723280300966D2E /* Player.cpp */; };
 		AA79757E1723280300966D2E /* SquareTarget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA7975781723280300966D2E /* SquareTarget.cpp */; };
 		AABE5AE7172F39EC0069FDD4 /* square_round.png in Resources */ = {isa = PBXBuildFile; fileRef = AABE5AE6172F39EC0069FDD4 /* square_round.png */; };
+		AADCA75E17306AD80049E76D /* Roboto-Condensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AADCA75D17306AD80049E76D /* Roboto-Condensed.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -644,7 +645,7 @@
 		AA5EF9E017273F8200E4BB1F /* ScoreCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreCounter.h; sourceTree = "<group>"; };
 		AA7975701723280300966D2E /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		AA7975711723280300966D2E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		AA7975721723280300966D2E /* GameManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameManager.cpp; sourceTree = "<group>"; };
+		AA7975721723280300966D2E /* GameManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GameManager.cpp; sourceTree = "<group>"; };
 		AA7975731723280300966D2E /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 		AA7975741723280300966D2E /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorldScene.cpp; sourceTree = "<group>"; };
 		AA7975751723280300966D2E /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
@@ -653,6 +654,7 @@
 		AA7975781723280300966D2E /* SquareTarget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SquareTarget.cpp; sourceTree = "<group>"; };
 		AA7975791723280300966D2E /* SquareTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareTarget.h; sourceTree = "<group>"; };
 		AABE5AE6172F39EC0069FDD4 /* square_round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = square_round.png; path = Resources/square_round.png; sourceTree = "<group>"; };
+		AADCA75D17306AD80049E76D /* Roboto-Condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Condensed.ttf"; path = "Resources/Roboto-Condensed.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -722,6 +724,7 @@
 		2019C3BC170DF6A400B9767B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AADCA75D17306AD80049E76D /* Roboto-Condensed.ttf */,
 				AABE5AE6172F39EC0069FDD4 /* square_round.png */,
 				201AD7BE1710AB160072B899 /* circle.png */,
 				201AD7BF1710AB160072B899 /* square.png */,
@@ -1621,6 +1624,7 @@
 				AA47CF7117135E2600B9301A /* ChangeLog in Resources */,
 				AA47CF7217135E2600B9301A /* CMakeLists.txt in Resources */,
 				AABE5AE7172F39EC0069FDD4 /* square_round.png in Resources */,
+				AADCA75E17306AD80049E76D /* Roboto-Condensed.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
