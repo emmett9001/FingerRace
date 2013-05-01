@@ -38,7 +38,7 @@
 		<string>Roboto-Condensed.ttf</string>
 	</array>
 	<key>UIPrerenderedIcon</key>
-	<true/>
+	<false/>
 	<key>UIRequiredDeviceCapabilities</key>
 	<dict>
 		<key>accelerometer</key>
