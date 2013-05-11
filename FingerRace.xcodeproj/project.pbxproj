@@ -1945,6 +1945,73 @@
 			};
 			name = Release;
 		};
+		AA6079AD173E9F2F00ABC15D /* TabletOnPhone */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					DEBUG,
+					"COCOS2D_DEBUG=1",
+					USE_FILE32API,
+					TARGET_OS_IPHONE,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(PROJECT_NAME)/libs/cocos2dx/kazmath/include\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx\"",
+					"\"$(PROJECT_NAME)/libs/CocosDenshion/include\"",
+					"\"$(SDKROOT)/usr/include/libxml2\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/include\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/third_party/ios\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/ios\"",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = TabletOnPhone;
+		};
+		AA6079AE173E9F2F00ABC15D /* TabletOnPhone */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Emmet Butler (96JS2MCL4J)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Emmet Butler (96JS2MCL4J)";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = FingerRace/Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					DEBUG,
+					"COCOS2D_DEBUG=1",
+					USE_FILE32API,
+					TARGET_OS_IPHONE,
+					PHONE_SIM_TABLET,
+				);
+				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				INFOPLIST_FILE = FingerRace/Resources/Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/FingerRace/libs/cocos2dx/platform/third_party/ios/libraries\"",
+					"\"$(SRCROOT)/FingerRace/core/libs/cocos2dx/platform/third_party/ios/libraries\"",
+				);
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-lz",
+				);
+				PRODUCT_NAME = FingerRace;
+				PROVISIONING_PROFILE = "56342F10-ACE9-456F-B1FE-C0D74B52E263";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "56342F10-ACE9-456F-B1FE-C0D74B52E263";
+				WRAPPER_EXTENSION = app;
+			};
+			name = TabletOnPhone;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1952,6 +2019,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2019C64E170DF6B100B9767B /* Debug */,
+				AA6079AD173E9F2F00ABC15D /* TabletOnPhone */,
 				2019C64F170DF6B100B9767B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1961,6 +2029,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2019C651170DF6B100B9767B /* Debug */,
+				AA6079AE173E9F2F00ABC15D /* TabletOnPhone */,
 				2019C652170DF6B100B9767B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
