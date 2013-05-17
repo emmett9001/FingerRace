@@ -29,3 +29,6 @@ profile
 DerivedData
 .idea/
 *.hmap
+
+.*.un~
+.*.swp
